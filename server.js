@@ -27,8 +27,16 @@ ShoppingList.create('peppers', 4);
 
 // when the root of this route is called with GET, return
 // all current ShoppingList items by calling `ShoppingList.get()`
+
 app.get('/shopping-list', (req, res) => {
   res.json(ShoppingList.get());
+});
+
+Recipes.create('grilled cheese', "american cheese");
+Recipes.create('chocolate milk', ['cocoa', 'milk', 'sugar'])
+
+app.get('/recipes', (req, res) => {
+   res.json(Recipes.get());
 });
 
 app.listen(process.env.PORT || 8080, () => {
